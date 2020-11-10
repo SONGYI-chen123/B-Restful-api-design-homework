@@ -20,4 +20,12 @@ public class StudentService {
                 .build();
         students.add(newStudent);
     }
+
+    public void deleteStudent(Integer id) {
+        for(int i = 0; i<students.size(); i++){
+            if (students.get(i).getStudentId().equals(id)){
+                students.remove(students.get(i));
+            }
+        }
+    }
 }
