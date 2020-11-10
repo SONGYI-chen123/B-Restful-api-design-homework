@@ -39,4 +39,9 @@ public class StudentController {
     public Student getStudentById(@PathVariable Integer id){
         return studentService.getStudentById(id);
     }
+
+    @PostMapping("/update/{id}")
+    public void updateStudentInfo(@RequestBody Student student,@PathVariable Integer id){
+        studentService.updateStudentInfo(student,id);
+    }
 }

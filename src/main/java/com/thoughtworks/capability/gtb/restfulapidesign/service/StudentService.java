@@ -52,4 +52,20 @@ public class StudentService {
         }
         return studentById;
     }
+
+    public void updateStudentInfo(Student student, Integer id) {
+        for (int i = 0; i<students.size();i++){
+            if(students.get(i).getStudentId().equals(id)){
+                if(student.getStudentName() != null){
+                    students.get(i).setStudentName(student.getStudentName());
+                }
+                if(student.getGender() != null){
+                    students.get(i).setGender(student.getGender());
+                }
+                if(student.getGender() != null){
+                    students.get(i).setStudentNote(student.getStudentNote());
+                }
+            }
+        }
+    }
 }
