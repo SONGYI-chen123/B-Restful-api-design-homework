@@ -109,4 +109,12 @@ public class StudentService {
                 .build();
         return group;
     }
+
+    public void updateGroupName(String groupName, Integer id) {
+        for(int i = 0;i<groups.size();i++){
+            if(groups.get(i).getGroupId().equals(id)){
+                groups.get(i).setGroupName(groupName);
+            }
+        }
+    }
 }
