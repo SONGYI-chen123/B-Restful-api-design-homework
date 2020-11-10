@@ -42,4 +42,14 @@ public class StudentService {
         }
         return responseStudents;
     }
+
+    public Student getStudentById(Integer id) {
+        Student studentById = new Student();
+        for(int i = 0; i<students.size(); i++){
+            if (students.get(i).getStudentId().equals(id)){
+                studentById = students.get(i);
+            }
+        }
+        return studentById;
+    }
 }
