@@ -117,4 +117,8 @@ public class StudentService {
             }
         }
     }
+
+    public List<Group> getGroups() {
+        return groups;
+    }
 }
