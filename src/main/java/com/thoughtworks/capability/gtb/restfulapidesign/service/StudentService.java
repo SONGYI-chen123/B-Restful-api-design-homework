@@ -28,4 +28,18 @@ public class StudentService {
             }
         }
     }
+
+    public List<Student> getStudents() {
+        return students;
+    }
+
+    public List<Student> getStudentsByGender(String gender) {
+        List<Student> responseStudents = new ArrayList<>();
+        for(int i = 0; i<students.size(); i++){
+            if (students.get(i).getGender().equals(gender)){
+                responseStudents.add(students.get(i));
+            }
+        }
+        return responseStudents;
+    }
 }
