@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/students")
 public class StudentController {
 
     private final StudentService studentService;
@@ -13,13 +14,13 @@ public class StudentController {
         this.studentService = studentService;
     }
 
-    @RequestMapping(value = "/students/add",method = RequestMethod.POST)
+    @PostMapping("/add")
     @ResponseStatus(HttpStatus.CREATED)
     public void addStudent(@RequestBody Student student){
         studentService.addStudent(student);
     }
 
-    @RequestMapping(value = "/students/delete/{id}",method = RequestMethod.POST)
+    @PostMapping("/delete/{id}")
     public void deleteStudent(@PathVariable Integer id){
         studentService.deleteStudent(id);
     }
